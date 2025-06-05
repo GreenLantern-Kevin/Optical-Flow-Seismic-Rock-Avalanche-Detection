@@ -4,7 +4,8 @@ Optical-Flow-Seismic-Rock-Avalanche-Detection is a package to detect deformation
 * Python 3.10 with packages opencv-python (4.9.0), matplotlib (3.9.0), numpy (1.26.4), pandas (2.2.2), cvzone (1.6.1), sympy (1.12) installed
 * Windows 10/11
 # Description of Files
-config.yml references the file paths to the data and is called by the python script.
+* **denseOpticalFlow.py** and **sparseOpticalFlow.py** are fundamental
+* config.yml references the file paths to the data and is called by the python script.
 TrackFlow contains the code. runTrackFlow.py executes the program in the command line. The functions folder contains the helper functions.
 1_Data contain the data necessary to reproduce the results in the paper, including the DSMs, Imagery, outputs from CIAS, and the manually derived validation vectors.
 config.yml is the config file used to run runTrackFlow.py. Edit this file to run the code.
