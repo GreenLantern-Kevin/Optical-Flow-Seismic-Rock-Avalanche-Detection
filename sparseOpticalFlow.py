@@ -96,8 +96,8 @@ while True:
         
         with open(filename, 'a') as f:
             f.write('Track Count: %d\n' % trajectoriesNum)
-        for trajectory in trajectories:     #后面跟上面类似，重新再遍历一遍
-            pf = np.array(trajectory[0])  # 要转换一下格式为np.array才能后面相减
+        for trajectory in trajectories:     
+            pf = np.array(trajectory[0])  
             pl = np.array(trajectory[-1])
             p3 = pl - pf
             p4 = math.hypot(p3[0], p3[1])
