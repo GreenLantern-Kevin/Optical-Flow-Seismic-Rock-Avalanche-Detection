@@ -74,8 +74,8 @@ for second in range(110, 111):
     cb = fig.colorbar(scat,orientation='horizontal')  
     cb.ax.set_xlabel('Speed')       
 
-    sub.set_xlim([0,3840])
-    sub.set_ylim([0,2160])  
+    sub.set_xlim([0,width of original video])
+    sub.set_ylim([0,height of original video])  
 
     plt.show()
     fig.savefig(f"Speed{second}s.png",transparent=True,dpi=300)
