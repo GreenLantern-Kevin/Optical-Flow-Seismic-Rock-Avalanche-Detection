@@ -4,11 +4,9 @@ Optical-Flow-Seismic-Rock-Avalanche-Detection is a package to detect deformation
 * Python 3.10 with packages opencv-python (4.9.0), matplotlib (3.9.0), numpy (1.26.4), pandas (2.2.2), cvzone (1.6.1), sympy (1.12) installed
 * Windows 10/11
 # Description of Files
-* **denseOpticalFlow.py** and **sparseOpticalFlow.py** are fundamental codes for implementing the optical flow methods.
-* **GetData&DrawFigure.py** is.
-TrackFlow contains the code. runTrackFlow.py executes the program in the command line. The functions folder contains the helper functions.
-1_Data contain the data necessary to reproduce the results in the paper, including the DSMs, Imagery, outputs from CIAS, and the manually derived validation vectors.
-config.yml is the config file used to run runTrackFlow.py. Edit this file to run the code.
+* **denseOpticalFlow.py** and **sparseOpticalFlow.py** contain the code necessary to implement the Optical Flow methods.
+* **GetData&DrawFigure.py** is used for post-processing data derived from the Lucas-Kanade sparse optical flow method.
+* **HVHistograms.py** is used to draw H&V channel histograms based on the results derived from the Farnebäck sparse optical flow method.
 # Instructions
 Download TrackFlow and 1_Data folders and the config.yml file and put into an overarching folder somewhere in your file system.
 Ensure that required Python packages are installed
@@ -44,5 +42,5 @@ The validation sets have the X,Y starting coordinates, dx, dy which are the U,V 
 4_Validation contain the tables summarising the comparisons between the manually derived vectors and the predictions for various datasets for the NCC and the Optical Flow tracking methods
 5_Plots contain the summary plots illustrating selected results that are included in the paper.
 # Notes
-All imagery is georeferenced using New Zealand Transverse Mercator projection (NZTM, EPSG: 2193), all elevations are height above ellipsoid
-Displacement measurements are in metres
+[Displacement measurements are in metres
+](https://doi.org/10.5281/zenodo.15615140)
