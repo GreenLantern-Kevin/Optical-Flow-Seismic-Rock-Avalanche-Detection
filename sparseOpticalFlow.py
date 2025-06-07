@@ -30,6 +30,7 @@ fps = cap.get(cv2.CAP_PROP_FPS)
 size = (2*int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),2*int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))) 
 out = cv2.VideoWriter('Nayong4Stacked.avi',fourcc ,fps, size)   
 
+filename = 'Alldata.txt'
 
 while True:
 
@@ -40,6 +41,9 @@ while True:
        
     frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)        
     img = frame.copy()
+  
+    with open(filename, 'a') as f:
+        f.write("Frame: %d\n" % frame_idx)    # Recording Data
 
  
     # Calculate optical flow for a sparse feature set using the iterative Lucas-Kanade Method
@@ -67,6 +71,7 @@ while True:
             if len(trajectory) > trajectory_len:    
                 del trajectory[0]
             new_trajectories.append(trajectory)     
+            # Newest detected point
             cv2.circle(img, (int(x), int(y)), 2, (0, 0, 255), -1)   
 
         trajectories = new_trajectories
@@ -88,7 +93,22 @@ while True:
         #### Record Optical Flow Energy
         df = pd.DataFrame({'Frame_Index': [frame_idx], 'OpticalFlow_Energy': [total_energy]})
         df.to_csv('optical_flow_energy.csv', mode='a', header=not bool(frame_idx - 1), index=False)
-      
+        
+        with open(filename, 'a') as f:
+            f.write('Track Count: %d\n' % trajectoriesNum)
+        for trajectory in trajectories:     #后面跟上面类似，重新再遍历一遍
+            pf = np.array(trajectory[0])  # 要转换一下格式为np.array才能后面相减
+            pl = np.array(trajectory[-1])
+            p3 = pl - pf
+            p4 = math.hypot(p3[0], p3[1])
+            if p4 > 10:
+                t = len(trajectory) / 30
+                speed = p4 / t
+                with open(filename, 'a') as f:
+                    f.write("Speed: %f\n" % speed)
+                    f.write("Length of trajectory: %d.  " % len(trajectory))
+                    [f.write("{},".format(i)) for i in trajectory]
+                    f.write("\n")
 
     # Update interval - When to update and detect new features
     if frame_idx % detect_interval == 0:
@@ -109,8 +129,6 @@ while True:
 
     frame_idx += 1  
     print(frame_idx)
-    # print(len(trajectories))
-    #print(trajectoriesNum)
     prev_gray = frame_gray      
 
     # End time
