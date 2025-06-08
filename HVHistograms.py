@@ -23,8 +23,8 @@ def plot_channel_histogram(channel, channel_name="Channel",color='b'):
 
 
 
-h_channel = cv2.imread('NayongDenseH01_20.jpg')
-v_channel = cv2.imread('NayongDenseV01_20.jpg')
+h_channel = cv2.imread('HChannel_Figure_Path')
+v_channel = cv2.imread('VChannel_Figure_Path')
 
 plot_channel_histogram(h_channel, "Hue",color='r')
 plot_channel_histogram(v_channel, "Value",color='b')
