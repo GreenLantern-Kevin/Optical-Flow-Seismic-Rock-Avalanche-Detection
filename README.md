@@ -18,7 +18,6 @@ Optical-Flow-Seismic-Rock-Avalanche-Detection is a package to detect deformation
 3. Velocity distribution in seconds over the range can be plotted via changing the numbers in Lines 32 of **GetData&DrawFigure.py**. Line 30 is the path of all data derived from sparse optical flow algorithm.
 4. Lines 26-27 in **HVHistograms.py** should be change to H channel and V Channel image paths. Drawing parameters are in lines 29-30.
 # Understanding the Results
-1. Run **sparseOpticalFlow.py** will get a txt file **Alldata.txt** that records all optical flow information, a csv file **optical_flow_energy.csv** that records optical flow energy information, and an **output video. The output video contain the original image (top left), grayscale converted image (top right), corner detection results (bottom left) and extracted optical flow trajectory (bottom right).
 1. Run **sparseOpticalFlow.py** will get a txt file **Alldata.txt** that records all optical flow information, a csv file **optical_flow_energy.csv** that records optical flow energy information, and an **output video**. The output video contain the original image (top left), grayscale converted image (top right), corner detection results (bottom left) and extracted optical flow trajectory (bottom right).
 2. Run **denseOpticalFlow.py** will get an **output video**. The output video contain the optical flow vector field visualization (top left), HSV-encoded dense optical flow visualization (top right), H channel visualization (bottom left) and V Channel visualization (bottom right).
 # Notes
