@@ -14,12 +14,15 @@ Optical-Flow-Seismic-Rock-Avalanche-Detection is a package to detect deformation
 4. Post-processing the results via **GetData&DrawFigure.py** and **HVHistograms.py**.
 # Main Parameters in Codes
 1. Lines 9-19 in **sparseOpticalFlow.py** can be changed as needed, explanation on parameters of the Lucas-Kanade sparse optical flow algorithm can be found in [OpenCV documentation](https://docs.opencv.org/4.9.0/dc/d6b/group__video__track.html). Line 26 and Line 31 are the path of the input video and the name of the output video respectively.
-2. Lines 64 in **denseOpticalFlow.py** contains main parameters of the Farnebäck dense optical flow algorithm which can be found in [OpenCV documentation](https://docs.opencv.org/4.9.0/dc/d6b/group__video__track.html). Line 42 and Line 46 are the path of the input video and the name of the output video respectively.
+2. Lines 80 in **denseOpticalFlow.py** contains main parameters of the Farnebäck dense optical flow algorithm which can be found in [OpenCV documentation](https://docs.opencv.org/4.9.0/dc/d6b/group__video__track.html). Line 58 and Line 62 are the path of the input video and the name of the output video respectively.
 3. Velocity distribution in seconds over the range can be plotted via changing the numbers in Lines 32 of **GetData&DrawFigure.py**. Line 30 is the path of all data derived from sparse optical flow algorithm.
 4. Lines 26-27 in **HVHistograms.py** should be change to H channel and V Channel image paths. Drawing parameters are in lines 29-30.
 # Understanding the Results
 1. Run **sparseOpticalFlow.py** will get a txt file **Alldata.txt** that records all optical flow information, a csv file **optical_flow_energy.csv** that records optical flow energy information, and an **output video**. The output video contain the original image (top left), grayscale converted image (top right), corner detection results (bottom left) and extracted optical flow trajectory (bottom right).
 2. Run **denseOpticalFlow.py** will get an **output video**. The output video contain the optical flow vector field visualization (top left), HSV-encoded dense optical flow visualization (top right), H channel visualization (bottom left) and V Channel visualization (bottom right).
+3. **GetData&DrawFigure.py** is based on the file **Alldata.txt** derived from **sparseOpticalFlow.py**. It can obtain the optical flow velocity distribution at any time and store it in the overarching folder as images.
+4. **HVHistograms.py** is based on the results of **denseOpticalFlow.py**. It can obtain H and V channel pixel intensity histograms from images.
+5. The Repository provides general application code of the method, which can be flexibly adjusted for actual application.
 # Notes
 * The length and width of the output video are both twice the input video. Input video can be scaled down for faster speed but at the expense of accuracy.
 * Displacement measurements directly obtained by the optical flow methods are in pixels.
