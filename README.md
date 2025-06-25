@@ -1,5 +1,5 @@
 # Optical-Flow-Seismic-Rock-Avalanche-Detection
-Optical-Flow-Seismic-Rock-Avalanche-Detection is a package to detect deformation and dynamic characteristics with computer vision and seismic signal analysis. The manuscript "A Novel Joint Framework of Computer Vision and Seismic Signal Analysis to Detect Deformation and Dynamic Characteristics of Large Rock Avalanches" has been submitted to Geophysical Research Letters. Once the manuscript is accepted and published, the paper will be uploaded in the repository and the repository will be updated.
+Optical-Flow-Seismic-Rock-Avalanche-Detection is a package to detect deformation and dynamic characteristics with computer vision and seismic signal analysis. The manuscript "Quantitative detection of deformation and dynamic characteristics during large rock avalanches: a novel joint framework integrating computer vision and seismic signal analysis" has been submitted to Engineering Geology. Once the manuscript is accepted and published, the paper will be uploaded in the repository and the repository will be updated.
 # Recommended Interpreter
 * Python 3.10 with packages opencv-python (4.9.0), matplotlib (3.9.0), numpy (1.26.4), pandas (2.2.2), cvzone (1.6.1), sympy (1.12) installed
 * Windows 10/11
