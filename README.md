@@ -26,4 +26,4 @@ Optical-Flow-Seismic-Rock-Avalanche-Detection is a package to detect deformation
 # Notes
 * The length and width of the output video are both twice the input video. Input video can be scaled down for faster speed but at the expense of accuracy.
 * Displacement measurements directly obtained by the optical flow methods are in pixels.
-* Analytical results and datasets are available in zenodo [Data From "A Novel Joint Framework of Computer Vision and Seismic Signal Analysis to Detect Deformation and Dynamic Characteristics of Large Rock Avalanches"](https://doi.org/10.5281/zenodo.15615140)
+* Analytical results and datasets are available in zenodo [Data From "Quantitative detection of deformation and dynamic characteristics during large rock avalanches: a novel joint framework integrating computer vision and seismic signal analysis"](https://doi.org/10.5281/zenodo.15745144)
